@@ -6,8 +6,9 @@
 </template>
 
 <script>
-
-import * as obj from "./until/my"
+// https://www.css-js.com/ 压缩
+// import * as obj from "./until/my"
+import * as obj from "./until/new"
 export default {
   name: "App",
   components: {

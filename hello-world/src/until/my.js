@@ -127,7 +127,7 @@ export const isCardID = (sId) => {
         }
     }
     //身份证城市
-    var aCity = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外" };
+    let aCity = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外" };
     if (!aCity[parseInt(sId.substr(0, 2))]) {
         return {
             type: 2,
@@ -136,7 +136,7 @@ export const isCardID = (sId) => {
     }
 
     // 出生日期验证
-    var sBirthday = (sId.substr(6, 4) + "-" + Number(sId.substr(10, 2)) + "-" + Number(sId.substr(12, 2))).replace(/-/g, "/"),
+    let sBirthday = (sId.substr(6, 4) + "-" + Number(sId.substr(10, 2)) + "-" + Number(sId.substr(12, 2))).replace(/-/g, "/"),
         d = new Date(sBirthday)
     if (sBirthday != (d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate())) {
         return {
@@ -146,13 +146,13 @@ export const isCardID = (sId) => {
     }
 
     // 身份证号码校验
-    var sum = 0,
+    let sum = 0,
         weights = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2],
         codes = "10X98765432"
-    for (var i = 0; i < sId.length - 1; i++) {
+    for (let i = 0; i < sId.length - 1; i++) {
         sum += sId[i] * weights[i];
     }
-    var last = codes[sum % 11]; //计算出来的最后一位身份证号码
+    let last = codes[sum % 11]; //计算出来的最后一位身份证号码
     if (sId[sId.length - 1] != last) {
         return {
             type: 4,
@@ -168,12 +168,12 @@ export const isCardID = (sId) => {
 
 // 将阿拉伯数字翻译成中文的大写数字
 export const numberToChinese = (num) => {
-    var AA = new Array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
-    var BB = new Array("", "十", "百", "仟", "萬", "億", "点", "");
-    var a = ("" + num).replace(/(^0*)/g, "").split("."),
+    let AA = new Array("零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十");
+    let BB = new Array("", "十", "百", "仟", "萬", "億", "点", "");
+    let a = ("" + num).replace(/(^0*)/g, "").split("."),
         k = 0,
         re = "";
-    for (var i = a[0].length - 1; i >= 0; i--) {
+    for (let i = a[0].length - 1; i >= 0; i--) {
         switch (k) {
             case 0:
                 re = BB[7] + re;
@@ -199,7 +199,7 @@ export const numberToChinese = (num) => {
     if (a.length > 1) // 加上小数部分(如果有小数部分)
     {
         re += BB[6];
-        for (var i = 0; i < a[1].length; i++)
+        for (let i = 0; i < a[1].length; i++)
             re += AA[a[1].charAt(i)];
     }
     if (re == '一十')
@@ -229,16 +229,16 @@ export const changeToChinese = (Num) => {
         };
     }
     //字符处理完毕后开始转换，采用前后两部分分别转换
-    var part = String(Num).split(".");
-    var newchar = "";
+    let part = String(Num).split(".");
+    let newchar = "";
     //小数点前进行转化
-    for (var i = part[0].length - 1; i >= 0; i--) {
+    for (let i = part[0].length - 1; i >= 0; i--) {
         if (part[0].length > 10) {
             return "";
             //若数量超过拾亿单位，提示
         }
-        var tmpnewchar = ""
-        var perchar = part[0].charAt(i);
+        let tmpnewchar = ""
+        let perchar = part[0].charAt(i);
         switch (perchar) {
             case "0":
                 tmpnewchar = "零" + tmpnewchar;
@@ -303,7 +303,7 @@ export const changeToChinese = (Num) => {
                 tmpnewchar = tmpnewchar + "拾";
                 break;
         }
-        var newchar = tmpnewchar + newchar;
+        let newchar = tmpnewchar + newchar;
     }
     //小数点之后进行转化
     if (Num.indexOf(".") != -1) {
@@ -371,9 +371,9 @@ export const unique = (arr) => {
     if (Array.hasOwnProperty('from')) {
         return Array.from(new Set(arr));
     } else {
-        var n = {},
+        let n = {},
             r = [];
-        for (var i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {
             if (!n[arr[i]]) {
                 n[arr[i]] = true;
                 r.push(arr[i]);
