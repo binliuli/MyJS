@@ -13,8 +13,8 @@ export default {
   components: {
   },
   mounted(){
-    let s;
-    console.log(obj.isUndefined(s))
+    const s=58484.48585
+    console.log(obj.changeToChinese(s))
   },
 };
 </script>
@@ -27,5 +27,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 2000px;
 }
 </style>

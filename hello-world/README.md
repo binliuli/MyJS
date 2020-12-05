@@ -49,12 +49,57 @@ obj.isNull(s)
 ```
 obj.isUndefined(s)
 ```
-
-
-
-
-
-
+### 7、是否是对象
+```
+obj.isObj(s)
+```
+### 8、是否是数组
+```
+obj.isArray(s)
+```
+### 9、是否是微信浏览器
+```
+obj.isWeChatBrowser()
+```
+### 10、是否是移动端
+```
+obj.isDeviceMobile()
+```
+### 11、是否是QQ浏览器
+```
+obj.isQQBrowser()
+```
+### 12、去除html标签
+```
+obj.removeHtmltag(s)
+```
+### 13、获取网址url参数后面query参数 
+#### http://localhost:8080/?type=dddd
+```
+obj.removeHtmltag('type') //dddd
+```
+### 14、获取滚动的坐标
+```
+obj.getScrollPosition()
+```
+### 15、滚动到顶部事件
+```
+obj.scrollToTop()
+```
+### 16、校验身份证号 （参数：string）
+#### 身份证校验规则 https://blog.csdn.net/lbPro0412/article/details/81662637
+```
+obj.isCardID(s)
+```
+### 17、将阿拉伯数字翻译成中文的大写数字
+```
+obj.numberToChinese(num)
+```
+### 18、将数字转换为大写金额
+#### 小数点之后只能保留两位,系统将自动截断
+```
+obj.changeToChinese(num)
+```
 
 
 
