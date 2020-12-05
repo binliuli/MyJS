@@ -21,6 +21,19 @@ npm run lint
 ```
 
 # 详解my.js封装方法
+## 使用方法
+### 第一种
+```
+import * as obj from "./until/my"
+const s=58484.48585
+console.log(obj.changeToChinese(s))
+```
+### 第二种
+```
+import {changeToChinese} from "./until/my"
+const s=58484.48585
+console.log(obj.changeToChinese(s))
+```
 
 ## 1、是否是字符串
 ```
@@ -74,8 +87,8 @@ obj.isQQBrowser()
 obj.removeHtmltag(s)
 ```
 ### 13、获取网址url参数后面query参数 
-#### http://localhost:8080/?type=dddd
 ```
+http://localhost:8080/?type=dddd
 obj.removeHtmltag('type') //dddd
 ```
 ### 14、获取滚动的坐标
@@ -96,7 +109,7 @@ obj.isCardID(s)
 obj.numberToChinese(num)
 ```
 ### 18、将数字转换为大写金额
-#### 小数点之后只能保留两位,系统将自动截断
+#### 注意：小数点之后只能保留两位,系统将自动截断
 ```
 obj.changeToChinese(num)
 ```
