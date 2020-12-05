@@ -13,8 +13,8 @@ export default {
   components: {
   },
   mounted(){
-    const s=58484.48585
-    console.log(obj.changeToChinese(s))
+    const s=[1,2,3,3,4]
+    console.log(obj.unique(s))
   },
 };
 </script>

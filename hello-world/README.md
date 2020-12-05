@@ -113,6 +113,10 @@ obj.numberToChinese(num)
 ```
 obj.changeToChinese(num)
 ```
+### 19、数组去重
+```
+obj.unique(arr)
+```
 
 
 
