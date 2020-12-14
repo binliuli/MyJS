@@ -7,15 +7,14 @@
 
 <script>
 // https://www.css-js.com/ 压缩
-// import * as obj from "./until/my"
-import * as obj from "./until/new"
+import * as obj from "./until/my";
+// import * as obj from "./until/new"
 export default {
   name: "App",
-  components: {
-  },
-  mounted(){
-    const s=[1,2,3,3,4]
-    console.log(obj.unique(s))
+  components: {},
+  mounted() {
+    const str = "131126198904120677";
+    console.log(obj.IdCard(str, 3));
   },
 };
 </script>
