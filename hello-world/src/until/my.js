@@ -460,3 +460,39 @@ export const IdCard = (UUserCard, num) => {
         return age;
     }
 }
+
+// 求差值最大的
+// let arr = [
+//     1,
+//     4,
+//     100,
+//     102,
+//     103,
+//     108
+// ]
+// let obj = []
+// let n = 0
+// for (let i = 0; i < arr.length; i++) {
+//     let j = i + 1;
+//     if (Math.abs(arr[j] - arr[i]) > n) {
+//         n = Math.abs(arr[j] - arr[i])
+//         obj = []
+//         obj.push({ id: arr[j], index: j })
+//         obj.push({ id: arr[i], index: i })
+//     }
+// }
+// console.log(n, obj)
+
+// 数组内 求和（当前这个加前面几个） 例如：[1,2,3] [1,3,6]
+// let addWidth = [];
+//       for (let i = 0; i < arrWidths.length; i++) {
+//         if (i == 0) {
+//           addWidth.push(arrWidths[0]);
+//         } else {
+//           let a = 0;
+//           for (let j = 0; j < i + 1; j++) {
+//             a += arrWidths[j];
+//           }
+//           addWidth.push(a);
+//         }
+//       }
